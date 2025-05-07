@@ -4,5 +4,9 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-  "remoteUser": "node"
+  "remoteUser": "node",
+	"runArgs": [
+		"-p=3000:3000",
+		"--network=my-main-net"
+	]
 }
