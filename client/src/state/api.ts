@@ -29,7 +29,7 @@ export const api = createApi({
           const endpoint =
             userRole === "manager"
               ? `/managers/${user.userId}`
-              : `/tennants/${user.userId}`
+              : `/tenants/${user.userId}`
 
           let userDetailsResponse = await fetchWithBQ(endpoint)
 
