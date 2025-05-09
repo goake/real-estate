@@ -8,9 +8,10 @@ import React, { useEffect, useState } from "react"
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { data: authUser, isLoading: authLoading } = useGetAuthUserQuery()
+  console.log("authuser:", authUser)
   const router = useRouter()
   const pathname = usePathname()
-  const [isLoading, setIsloading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (authUser) {
@@ -21,12 +22,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       ) {
         router.push("/managers/properties", { scroll: false })
       } else {
-        setIsloading(false)
+        setIsLoading(false)
       }
     }
   }, [authUser, router, pathname])
 
-  if (authLoading || isLoading) return <>Loading...</>
+  // if (authLoading || isLoading) return <>Loading...gjo</>
 
   return (
     <div className="h-full w-full">
